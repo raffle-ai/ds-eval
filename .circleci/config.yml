@@ -53,18 +53,15 @@ jobs:
           name: "install dependency packages"
           command: |
             poetry install
-            poetry shell
 
       - run:
           name: "lint"
           command: |
-            poetry shell
             make lint
 
       - run:
           name: "test"
           command: |
-            poetry shell
             make test
 
       - run:
