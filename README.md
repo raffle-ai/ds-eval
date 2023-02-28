@@ -40,3 +40,9 @@ When creating a repository, please setup the following.
 
 When these steps are completed, you can remove yourself from collaborators and teams.
 
+
+# Code setup
+- If you don't need `api` directory, you can remove it entirely.
+- If you plan to have multiple modules, you can rename `src` to something more meaningful or just put your main package code there.
+- To make auto version bump working, you need to manually push `v0.1.0` tag.
+- Rename `ds-repo-template` from all files to actual project name. 
