@@ -99,7 +99,7 @@ jobs:
           command: |
             git config --global user.email "hal9000@raffle.ai"
             git config --global user.name "Hal 9000"
-            git remote set-url origin https://$GIT_TOKEN@github.com/raffle-ai/ds-section-processor.git/
+            git remote set-url origin https://$GIT_TOKEN@github.com/raffle-ai/ds-repo-template.git/
 
             python3 -m venv venv
             source venv/bin/activate
