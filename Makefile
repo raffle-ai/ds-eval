@@ -1,11 +1,11 @@
-MODULE_NAME=ds-repo-template
+MODULE_NAME=$(shell basename $(dir $(abspath $PWD)))
 
 DOCKER_REGISTRY=raffle.azurecr.io
 
 GIT_HASH=$(shell git rev-parse HEAD)
 VERSION=$(shell head -n 1 VERSION)
 
-.PHONY: docker clean lint test
+.PHONY: container docker docker-prod docker-prod-push lint test echo-module clean
 
 all: clean lint test
 
@@ -28,3 +28,5 @@ lint:
 test:
 	poetry run pytest
 
+echo-module:
+	@echo ${MODULE_NAME}
