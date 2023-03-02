@@ -46,3 +46,64 @@ When these steps are completed, you can remove yourself from collaborators and t
 - If you plan to have multiple modules, you can rename `src` to something more meaningful or just put your main package code there.
 - To make auto version bump working, you need to manually push `v0.1.0` tag.
 - Rename `ds-repo-template` from all files to actual project name. 
+
+## Packaging
+
+In order for your package to be importable from another project, two approaches are possible:
+
+
+### 1. Single package in a single repository
+
+Organize your code as follows where `my_package` is the name of your package with `-` replaced by `_`:
+
+```markdown
+my_package/
+├── __init__.py
+├── some_code/
+│ ├── __init__.py
+```
+
+In `pyproject.toml`:
+
+```toml
+[tool.poetry]
+name = "my-package"
+packages = [{ include = "my_package" }]
+```
+
+Then, from another project, you can import your package as follows:
+
+```python
+from my_package import some_code
+```
+
+
+### 2. Multiple packages in a single repository
+
+Organize your code as follows:
+
+```markdown
+src/
+├── my_package/
+│   ├── __init__.py
+├── my_other_package/
+│   ├── __init__.py
+```
+
+In `pyproject.toml`:
+
+```toml
+[tool.poetry]
+name = "my-package"
+packages = [
+    { from = "src", include = "my_package" },
+    { from = "src", include = "my_other_package" },
+]
+```
+
+Then, from another project, you can import your package as follows:
+
+```python
+import my_package
+import my_other_package
+```

@@ -9,7 +9,7 @@ from api import router
 PORT = int(os.getenv("APP_PORT", "8080"))
 
 app = FastAPI(
-    title="ds-template-repo",
+    title="ds-repo-template",
     description="Template repository for data science projects.",
     version=src.__version__,
 )
@@ -24,7 +24,7 @@ async def root_handler() -> str:
 
 
 def main() -> None:
-    """Main function to run ds-template-repo API."""
+    """Main function to run ds-repo-template API."""
     uvicorn.run(app, host="0.0.0.0", port=PORT)
 
 
