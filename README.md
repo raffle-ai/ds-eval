@@ -29,14 +29,7 @@ When creating a repository, please setup the following.
   - CircleCI
   - Slack
   - Gimlet (if needed)
-
-## Deploy keys
-- Create CircleCI key 
-
-## Secrets and variables / Actions
-- Create a new repository secret
-  - Name: `VERSIONING_TOKEN`
-  - Secret: you can find `GitHub Tokens` in Bitwarden under `Development` collection
+  - ClickUp (if needed)
 
 When these steps are completed, you can remove yourself from collaborators and teams.
 
@@ -44,8 +37,17 @@ When these steps are completed, you can remove yourself from collaborators and t
 # Code setup
 - If you don't need `api` directory, you can remove it entirely.
 - If you plan to have multiple modules, you can rename `src` to something more meaningful or just put your main package code there.
-- To make auto version bump working, you need to manually push `v0.1.0` tag.
-- Rename `ds-repo-template` from all files to actual project name. 
+- To make auto version bump working, you need to manually push `v0.1.0` tag at the very beginning.
+- Rename `ds-repo-template` from all files to actual project name
+  - `.circleci/.config`
+  - `src/api/__main__.py`
+  - `Dockerfile`
+  - `pyproject.toml`
+
+Remember to regenerate `poetry.lock` file:
+```shell
+poetry lock
+```
 
 ## Packaging
 
