@@ -1,5 +1,8 @@
+from package.module import foo
+
+
 def main():
-    pass
+    foo()
 
 
 if __name__ == "__main__":
