@@ -35,6 +35,11 @@ When creating a repository, please setup the following.
       - pushes
     
   - Slack
+    - Payload URL: https://hooks.slack.com/services/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
+    - Content type: application/json
+    - enable SSL verification
+    - select individual:
+      - pull requests
   - Gimlet (if needed)
   - ClickUp (if needed)
 
