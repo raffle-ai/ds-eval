@@ -27,6 +27,13 @@ When creating a repository, please setup the following.
 ## Webhooks
 - Create webhooks for:
   - CircleCI
+    - payload URL: https://circleci.com/hooks/github
+    - content-type: appplication/x-www-form-urlencoded
+    - enable SSL verification
+    - select individual:
+      - pull requests
+      - pushes
+    
   - Slack
   - Gimlet (if needed)
   - ClickUp (if needed)
