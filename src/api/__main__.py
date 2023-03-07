@@ -4,7 +4,7 @@ import uvicorn
 from fastapi import FastAPI
 
 import src
-from api import router
+from src.api import router
 
 PORT = int(os.getenv("APP_PORT", "8080"))
 

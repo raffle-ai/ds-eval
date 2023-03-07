@@ -25,6 +25,7 @@ loguru = "^0.6.0"
 pydantic = "^1.10.5"
 fastapi = "^0.92.0"
 uvicorn = "^0.20.0"
+mypy = "^1.1.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.1"
@@ -37,6 +38,23 @@ commitizen = "^2.42.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+python_version = "3.11"
+disable_error_code = [
+  "assignment",
+  "index",
+  "arg-type",
+  "call-arg",
+  "call-overload",
+  "union-attr",
+  "attr-defined",
+  "valid-type",
+  "dict-item",
+]
+ignore_missing_imports = true
+follow_imports = "skip"
+disallow_untyped_defs = true
 
 [tool.isort]
 line_length = 120

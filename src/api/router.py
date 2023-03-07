@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from api.models import CustomRequest, CustomResponse
-from package.module import foo
+from src.api.models import CustomRequest, CustomResponse
+from src.package.module import do_business_logic
 
 router = APIRouter()
 
@@ -10,5 +10,5 @@ router = APIRouter()
 async def custom_request(request: CustomRequest) -> CustomResponse:
     """Perform the endpoint action."""
     content = CustomResponse(content=request.content)
-    foo()
+    do_business_logic()
     return content
