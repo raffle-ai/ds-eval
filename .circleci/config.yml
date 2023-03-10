@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   slack: circleci/slack@3.4.2
-  gimlet: "gimlet-io/circleci-orb@1.0.0"
+  gimlet: "gimlet-io/circleci-orb@4.0.0"
 
 workflows:
   build:
@@ -143,7 +143,4 @@ jobs:
     machine: true
     steps:
       - checkout
-
-      - gimlet/gimlet-artifact-create:
-          image-tag: 'n/a'
-
+      - gimlet/gimlet-artifact-create
