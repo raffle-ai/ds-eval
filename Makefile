@@ -9,11 +9,8 @@ VERSION=v$(shell head -n 1 VERSION)
 
 all: clean lint test
 
-container:
-	docker build -t ${DOCKER_REGISTRY}/${MODULE_NAME}:dev --build-arg GIT_HASH=${GIT_HASH} .
-
 docker:
-	docker build -t ${DOCKER_REGISTRY}/${MODULE_NAME}:dev .
+	docker build -t ${DOCKER_REGISTRY}/${MODULE_NAME}:dev --build-arg GIT_HASH=${GIT_HASH} .
 
 docker-prod:
 	docker build -t ${DOCKER_REGISTRY}/${MODULE_NAME}:v${VERSION} .
