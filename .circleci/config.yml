@@ -38,7 +38,8 @@ workflows:
             tags:
               only: /^v.*/
 
-      - ship_gimlet_artifact:
+      - gimlet/gimlet-artifact-push:
+          name: Notifying Gimlet about new version
           context:
             - Gimlet
             - Slack
@@ -138,9 +139,3 @@ jobs:
           fail_only: true
           only_for_branches: main
 
-  ship_gimlet_artifact:
-    working_directory: /tmp/workspace
-    machine: true
-    steps:
-      - checkout
-      - gimlet/gimlet-artifact-create
