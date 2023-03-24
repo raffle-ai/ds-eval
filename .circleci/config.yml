@@ -65,7 +65,8 @@ jobs:
       - run:
           name: Install dependency packages
           command: |
-            poetry install
+           git config --global url."https://${GIT_TOKEN}@github.com/".insteadOf "https://github.com/"
+           poetry install
 
       - run:
           name: Lint
@@ -119,11 +120,6 @@ jobs:
       - checkout
       - attach_workspace:
           at: /tmp/workspace
-
-      - run:
-          name: Docker Login
-          command: |
-            docker login raffle.azurecr.io -u $CLIENT_ID -p $CLIENT_SECRET
 
       - run:
           name: Build docker
