@@ -8,6 +8,9 @@ USER somebody
 
 RUN pip install --user --upgrade pip
 
+ARG GIT_TOKEN
+RUN git config --global url."https://${GIT_TOKEN}@github.com/".insteadOf "https://github.com/"
+
 ENV POETRY_VERSION=1.3.0
 ENV POETRY_HOME=/home/somebody/poetry
 ENV POETRY_VENV=/home/somebody/venv
