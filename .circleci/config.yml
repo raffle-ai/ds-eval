@@ -56,7 +56,10 @@ workflows:
 jobs:
   test:
     docker:
-      - image: cimg/python:3.11.2
+      - image: raffle.azurecr.io/cimg-python:latest
+        auth:
+          username: $CLIENT_ID
+          password: $CLIENT_SECRET
 
     steps:
       - setup_remote_docker
@@ -90,7 +93,10 @@ jobs:
 
   bump_version:
     docker:
-      - image: cimg/python:3.11.2
+      - image: raffle.azurecr.io/cimg-python:latest
+        auth:
+          username: $CLIENT_ID
+          password: $CLIENT_SECRET
 
     steps:
       - setup_remote_docker
@@ -113,7 +119,10 @@ jobs:
 
   build_docker_prod_image:
     docker:
-      - image: cimg/python:3.11.2
+      - image: raffle.azurecr.io/cimg-python:latest
+        auth:
+          username: $CLIENT_ID
+          password: $CLIENT_SECRET
 
     steps:
       - setup_remote_docker
