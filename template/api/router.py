@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from src.api.models import CustomRequest, CustomResponse
-from src.package.module import do_business_logic
+from template.api.models import CustomRequest, CustomResponse
+from template.package.module import do_business_logic
 
 router = APIRouter()
 

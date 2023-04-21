@@ -1,4 +1,4 @@
-MODULE_NAME=$(shell basename $(dir $(abspath $PWD)))
+MODULE_NAME=ds-repo-template
 
 DOCKER_REGISTRY=raffle.azurecr.io
 

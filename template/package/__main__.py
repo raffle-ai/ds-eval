@@ -1,4 +1,4 @@
-from package.module import do_business_logic
+from template.package.module import do_business_logic
 
 
 def main() -> None:
