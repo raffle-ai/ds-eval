@@ -113,6 +113,7 @@ disable = [
     "missing-module-docstring",
     "too-few-public-methods",
     "use-dict-literal",
+    "no-else-return",
 ]
 
 extension-pkg-whitelist = "pydantic"
