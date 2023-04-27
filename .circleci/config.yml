@@ -16,6 +16,7 @@ workflows:
       - bump_version:
           context:
             - DSGithub
+            - AzureCR
 
           requires:
             - test
