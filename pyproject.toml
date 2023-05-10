@@ -114,6 +114,7 @@ disable = [
     "too-few-public-methods",
     "use-dict-literal",
     "no-else-return",
+    "logging-fstring-interpolation",
 ]
 
 extension-pkg-whitelist = "pydantic"
