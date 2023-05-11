@@ -33,7 +33,7 @@ When creating a repository, please setup the following.
     - select individual:
       - pull requests
       - pushes
-    
+
   - Slack
     - Payload URL: https://hooks.slack.com/services/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
     - Content type: application/json
@@ -43,8 +43,14 @@ When creating a repository, please setup the following.
   - Gimlet (if needed)
   - ClickUp (if needed)
 
-When these steps are completed, you can remove yourself from collaborators and teams.
+## Code security and analysis
+- Enable the following:
+  - Dependency graph
+  - Dependabot alerts
+- Access to alerts
+  - Add `raffle-ai/ds` team
 
+*When these steps are completed, you can remove yourself from collaborators and teams.*
 
 # Code setup
 - If you don't need `api` directory, you can remove it entirely.
