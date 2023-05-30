@@ -39,3 +39,10 @@ echo-module:
 echo-version:
 	@echo ${VERSION}
 
+check-commit-messages:
+	branch=$$(git rev-parse --abbrev-ref HEAD); \
+	if [ $$branch != "main" ] && [ $$branch != "master" ]; then \
+		cz check --rev-range main..HEAD; \
+	else \
+		echo "Skipping because of main or master branch"; \
+	fi

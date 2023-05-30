@@ -1,9 +1,13 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.commitizen]
 version = "0.1.0"
 version_files = [
   "src/__init__.py:__version__",
   "pyproject.toml:version",
-  "VERSION"
+  "VERSION",
 ]
 tag_format = "v$version"
 bump_message = "[ci skip] bump: $current_version → $new_version"
@@ -15,9 +19,11 @@ description = ""
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 packages = [
-    { from = "src", include = "api" },
-    { from = "src", include = "package" },
+  { from = "template", include = "api" },
+  { from = "template", include = "package" },
 ]
+# or
+# package = { include = "template" }
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -26,22 +32,21 @@ pydantic = "^1.10.5"
 fastapi = "^0.92.0"
 uvicorn = "^0.20.0"
 
+[tool.poetry.group.raffle.dependencies]
+ds-interface = { git = "https://github.com/raffle-ai/ds-interface.git", tag = "v0.2.1" }
+logger = { git = "https://github.com/raffle-ai/hugorm.git", subdirectory = "logger", tag = "v2.5.1" }
+environment = { git = "https://github.com/raffle-ai/hugorm.git", subdirectory = "environment", tag = "v2.5.1" }
+file = { git = "https://github.com/raffle-ai/hugorm.git", subdirectory = "file", tag = "v2.5.1" }
+
+# [tool.poetry.group.local.dependencies]
+# ds-interface = {path = "../ds-interface", develop=true}
+
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.1"
 ruff = "^0.0.261"
 black = "^23.1.0"
 pre-commit = "^3.0.4"
 commitizen = "^2.42.0"
-
-[tool.poetry.group.raffle.dependencies]
-ds-interface = {git = "https://github.com/raffle-ai/ds-interface.git", tag="v0.2.1"}
-
-# [tool.poetry.group.local.dependencies]
-# ds-interface = {path = "../ds-interface", develop=true}
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 line-length = 120
@@ -91,7 +96,6 @@ ignore = [
   "PLC1901", # compare-to-empty-string
   "PTH123",  # builtin-open
   "RET504",  # unnecessary-assign
-  # "N805", # invalid-first-argument-name-for-method
 ]
 
 # Allow autofix for all enabled rules (when `--fix`) is provided.

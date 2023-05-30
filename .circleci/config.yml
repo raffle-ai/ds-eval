@@ -67,10 +67,18 @@ jobs:
       - checkout
 
       - run:
+          name: Check commit messages
+          command: |
+            python3 -m venv venv
+            source venv/bin/activate
+            pip install commitizen
+            make check-commit-messages
+
+      - run:
           name: Install dependency packages
           command: |
-           git config --global url."https://${GIT_TOKEN}@github.com/".insteadOf "https://github.com/"
-           poetry install
+            git config --global url."https://${GIT_TOKEN}@github.com/".insteadOf "https://github.com/"
+            poetry install
 
       - run:
           name: Lint
@@ -144,4 +152,3 @@ jobs:
       - slack/status:
           fail_only: true
           only_for_branches: main
-
