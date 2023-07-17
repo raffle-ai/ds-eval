@@ -33,10 +33,10 @@ fastapi = "^0.92.0"
 uvicorn = "^0.20.0"
 
 [tool.poetry.group.raffle.dependencies]
-ds-interface = { git = "https://github.com/raffle-ai/ds-interface.git", tag = "v0.2.1" }
-logger = { git = "https://github.com/raffle-ai/hugorm.git", subdirectory = "logger", tag = "v2.5.1" }
-environment = { git = "https://github.com/raffle-ai/hugorm.git", subdirectory = "environment", tag = "v2.5.1" }
-file = { git = "https://github.com/raffle-ai/hugorm.git", subdirectory = "file", tag = "v2.5.1" }
+ds-interface = { git = "https://github.com/raffle-ai/ds-interface.git", tag = "v1.0.1" }
+logger = { git = "https://github.com/raffle-ai/hugorm.git", subdirectory = "logger", tag = "v5.3.2" }
+environment = { git = "https://github.com/raffle-ai/hugorm.git", subdirectory = "environment", tag = "v5.3.2" }
+file = { git = "https://github.com/raffle-ai/hugorm.git", subdirectory = "file", tag = "v5.3.2" }
 
 # [tool.poetry.group.local.dependencies]
 # ds-interface = {path = "../ds-interface", develop=true}
