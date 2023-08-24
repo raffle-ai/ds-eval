@@ -27,11 +27,15 @@ lint:
 	poetry run pre-commit install
 	poetry run pre-commit run --all-files
 
+deps:
+	poetry config installer.parallel false
+	poetry install
+
 test:
 	poetry run pytest -v
 
 run-local:
-	poetry run python -m api.main --reload --port 8080 --host 0.0.0.0
+	poetry run python -m template.api --reload
 
 echo-module:
 	@echo ${MODULE_NAME}
