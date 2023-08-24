@@ -15,8 +15,8 @@ workflows:
 
       - bump_version:
           context:
-            - DSGithub
             - AzureCR
+            - DSGithub
 
           requires:
             - test
@@ -40,7 +40,7 @@ workflows:
               only: /^v.*/
 
       - gimlet/gimlet-artifact-push:
-          name: Notifying Gimlet about new version
+          name: Notifying Gimlet about the new version
           context:
             - Gimlet
             - Slack
@@ -78,7 +78,7 @@ jobs:
           name: Install dependency packages
           command: |
             git config --global url."https://${GIT_TOKEN}@github.com/".insteadOf "https://github.com/"
-            poetry install
+            make deps
 
       - run:
           name: Lint
@@ -116,7 +116,7 @@ jobs:
           command: |
             git config --global user.email "hal9000@raffle.ai"
             git config --global user.name "Hal 9000"
-            git remote set-url origin https://$GIT_TOKEN@github.com/raffle-ai/ds-repo-template.git/
+            # git remote set-url origin https://$GIT_TOKEN@github.com/raffle-ai/ds-repo-template-change-this-please-and-uncomment.git/
 
             python3 -m venv venv
             source venv/bin/activate
@@ -151,4 +151,3 @@ jobs:
 
       - slack/status:
           fail_only: true
-          only_for_branches: main
