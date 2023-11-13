@@ -3,7 +3,7 @@ env: production
 namespace: production
 
 chart:
-  name: https://github.com/raffle-ai/onechart.git?sha=cd6754ae533fafd22253b74ce48dfa162641e2e5&path=/charts/onechart/
+  name: https://github.com/raffle-ai/onechart.git?sha=a7ea6978c0fd9b8e4e04543947f189bbbe734ccb&path=/charts/onechart/
 
 values:
   image:
