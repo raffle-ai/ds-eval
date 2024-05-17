@@ -1,0 +1,34 @@
+  {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "python",
+        "request": "launch",
+        "name": "Launch API",
+        "module": "template.api",
+        "args": [
+          "--reload"
+        ],
+        "cwd": "${workspaceFolder}",
+        "justMyCode": false,
+        "env": {
+          "INTERNAL_TOKEN": "${env:INTERNAL_TOKEN}",
+          "KNOWLEDGE_BASE_ID": "1370",
+          "MODEL_VERSION": "209",
+          "NAMESPACE": "production",
+          "ENVIRONMENT": "development",
+          "SERVICE_TYPE": "search",
+          "NATS_URI": "nats://localhost:4222",
+          "MODEL_MANAGER_URL": "localhost",
+          "MODEL_MANAGER_PORT": "5035"
+        }
+      },
+      {
+        "type": "python",
+        "request": "launch",
+        "name": "Launch current file",
+        "program": "${file}",
+        "justMyCode": false
+      }
+    ]
+  }

@@ -1,0 +1,54 @@
+app: ds-repo-template
+env: production
+namespace: production
+
+chart:
+  name: https://github.com/raffle-ai/onechart.git?sha=a7ea6978c0fd9b8e4e04543947f189bbbe734ccb&path=/charts/onechart/
+
+values:
+  image:
+    repository: raffle.azurecr.io/ds-repo-template
+    tag: "{{ .CIRCLE_TAG }}"
+    pullPolicy: Always
+
+  replicas: 1
+  containerPort: 8080
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 250Mi
+    limits:
+      cpu: 500m
+      memory: 500Mi
+
+  gitRepository: raffle-ai/ds-repo-template
+  gitSha: "{{ .CIRCLE_SHA1 }}"
+
+  podAnnotations:
+    config.linkerd.io/skip-outbound-ports: 5432,6379,4222
+
+  probe:
+    enabled: true
+    failureThreshold: 5
+    initialDelaySeconds: 10
+    path: /
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 3
+
+manifests: |
+  ---
+  apiVersion: linkerd.io/v1alpha2
+  kind: ServiceProfile
+  metadata:
+    name: ds-repo-template.production.svc.cluster.local
+    namespace: production
+  spec:
+    routes:
+    - name: '/custom_request'
+      condition:
+        all:
+          - pathRegex: '/custom_request'
+          - method: POST
+      isRetryable: false
