@@ -1,0 +1,86 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "json",
+  "dataset_size": 9707243,
+  "description": "",
+  "download_checksums": {
+    "/Users/maciejjalocha/repositories/ds-repo-template/eval/generated_questions_2.jsonl": {
+      "num_bytes": 17204867,
+      "checksum": null
+    }
+  },
+  "download_size": 17204867,
+  "features": {
+    "id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "created_at": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "updated_at": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "deleted_at": {
+      "dtype": "null",
+      "_type": "Value"
+    },
+    "knowledge_base_id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "answer_id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "data_source": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "question_type": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "label_method_type": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "section_id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "hash": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "language": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 26912110,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 9707243,
+      "num_examples": 44964,
+      "dataset_name": "json"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
