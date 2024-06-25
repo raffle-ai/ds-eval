@@ -3,7 +3,7 @@ env: staging
 namespace: staging
 
 chart:
-  name: https://github.com/raffle-ai/onechart.git?sha=a7ea6978c0fd9b8e4e04543947f189bbbe734ccb&path=/charts/onechart/
+  name: https://github.com/raffle-ai/onechart.git?sha=39fb77d420076af7551f417c6535a21841c8be62&path=/charts/onechart/
 
 values:
   image:
